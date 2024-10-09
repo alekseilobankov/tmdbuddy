@@ -1,7 +1,6 @@
-import XCTest
+import Testing
 @testable import TMDBuddySecrets
 
-final class TMDBuddySecretsTests: XCTestCase {
-    func testExample() throws {
-    }
+@Test func example() {
+    
 }

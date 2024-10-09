@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "TMDBuddySecrets",
-    platforms: [.macOS(.v14)],
+    platforms: [.macOS(.v14), .iOS(.v13)],
     products: [
         .library(
             name: "TMDBuddySecrets",
@@ -26,5 +26,6 @@ let package = Package(
             dependencies: ["GenerateEnvironmentalVariablesExec"]
         ),
         .testTarget(name: "TMDBuddySecretsTests", dependencies: ["TMDBuddySecrets"]),
-    ]
+    ],
+    swiftLanguageVersions: [.version("6.0")]
 )
