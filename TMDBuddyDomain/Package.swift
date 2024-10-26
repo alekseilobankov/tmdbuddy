@@ -9,9 +9,18 @@ let package = Package(
     products: [
         .library(name: "TMDBuddyDomain", targets: ["TMDBuddyDomain"]),
     ],
-    targets: [
-        .target(name: "TMDBuddyDomain"),
-        .testTarget(name: "TMDBuddyDomainTests", dependencies: ["TMDBuddyDomain"]),
+    dependencies: [
+        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", from: "0.57.0")
     ],
-    swiftLanguageVersions: [.version("6.0")]
+    targets: [
+        .target(
+            name: "TMDBuddyDomain",
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]
+        ),
+        .testTarget(
+            name: "TMDBuddyDomainTests",
+            dependencies: ["TMDBuddyDomain"]
+        ),
+    ],
+    swiftLanguageModes: [.version("6.0")]
 )

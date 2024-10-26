@@ -1,0 +1,18 @@
+only_rules:
+    - line_length
+    - force_cast
+    - force_unwrapping
+    - force_try
+
+force_unwrapping: error
+
+line_length:
+    warning: 150
+    error: 150
+    ignores_function_declarations: false
+    ignores_comments: true
+    ignores_urls: true
+
+allow_zero_lintable_files: false
+strict: true
+check_for_updates: true
