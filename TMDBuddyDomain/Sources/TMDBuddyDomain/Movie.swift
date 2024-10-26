@@ -20,4 +20,6 @@ struct Movie {
     let releaseDate: Date
     let voteAverage: Double
     let voteCount: Int
+
+    let demoFeatureField: String
 }
