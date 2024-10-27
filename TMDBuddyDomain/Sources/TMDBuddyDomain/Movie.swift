@@ -21,7 +21,3 @@ struct Movie {
     let voteAverage: Double
     let voteCount: Int
 }
-
-func violateSwiftlintAgain() {
-    let forceCastExample = 2 as! Double
-}
