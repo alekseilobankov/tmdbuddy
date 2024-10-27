@@ -25,4 +25,5 @@ struct Movie {
 func violatesSwiftlint() {
     let dummyCast = 3 as! Double
     let secondDummyCast = 3 as! Double
+    let secondDummyCast2 = 3 as! Double
 }
