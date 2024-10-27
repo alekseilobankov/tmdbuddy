@@ -12,13 +12,20 @@ let package = Package(
             targets: ["TMDBuddySecrets"]
         ),
     ],
+    dependencies: [
+        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", from: "0.57.0")
+    ],
     targets: [
         .target(
             name: "TMDBuddySecrets",
-            plugins: ["GenerateEnvironmentalVariablesPlugin"]
+            plugins: [
+                "GenerateEnvironmentalVariablesPlugin",
+                .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")
+            ]
         ),
         .executableTarget(
-            name: "GenerateEnvironmentalVariablesExec"
+            name: "GenerateEnvironmentalVariablesExec",
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]
         ),
         .plugin(
             name: "GenerateEnvironmentalVariablesPlugin",
@@ -27,5 +34,5 @@ let package = Package(
         ),
         .testTarget(name: "TMDBuddySecretsTests", dependencies: ["TMDBuddySecrets"]),
     ],
-    swiftLanguageVersions: [.version("6.0")]
+    swiftLanguageModes: [.version("6.0")]
 )

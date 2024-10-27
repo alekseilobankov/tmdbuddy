@@ -19,7 +19,8 @@ let package = Package(
         ),
         .testTarget(
             name: "TMDBuddyDomainTests",
-            dependencies: ["TMDBuddyDomain"]
+            dependencies: ["TMDBuddyDomain"],
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]
         ),
     ],
     swiftLanguageModes: [.version("6.0")]
