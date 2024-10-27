@@ -21,21 +21,3 @@ struct Movie {
     let voteAverage: Double
     let voteCount: Int
 }
-
-func shouldNotViolateSwiftlint() {
-    let formattingViolation :Int=   5
-    print ( formattingViolation )
-
-}
-
-func shouldViolateSwiftlint() {
-    let lineLengthViolation = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-
-    let forceCastViolation = 2 as! Double
-
-    let optionalInt: Int? = 3
-    let forceUnwrappingViolation = optionalInt!
-
-    func dummyThrowingFunc() throws { throw CancellationError() }
-    let forceTryViolation = try! dummyThrowingFunc()
-}
