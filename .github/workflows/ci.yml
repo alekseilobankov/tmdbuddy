@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  swiftlint:
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 4
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: GitHub Action for SwiftLint
+        uses: norio-nomura/action-swiftlint@3.2.1
