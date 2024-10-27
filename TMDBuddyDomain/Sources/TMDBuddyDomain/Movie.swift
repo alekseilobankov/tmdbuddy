@@ -21,3 +21,7 @@ struct Movie {
     let voteAverage: Double
     let voteCount: Int
 }
+
+func shouldFailPR() {
+    let forceCast = 2 as! Double
+}
